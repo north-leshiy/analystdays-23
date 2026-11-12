@@ -1165,9 +1165,9 @@ const Thanks: Page = () => (
     <img
       src={qrTelegram}
       alt="QR: Telegram-канал @techlead_stream"
-      style={{ position: 'absolute', left: 79, top: 390, height: 600, display: 'block' }}
+      style={{ position: 'absolute', left: 79, top: 430, height: 420, display: 'block' }}
     />
-    <div style={{ position: 'absolute', left: 640, top: 770, width: 380 }}>
+    <div style={{ position: 'absolute', left: 490, top: 690, width: 500 }}>
       <div style={{ fontSize: 38, fontWeight: 700 }}>Мой Telegram-канал</div>
       <div style={{ fontSize: 36, color: C.onDark, marginTop: 16, lineHeight: 1.35 }}>
         Иван Поддубный
