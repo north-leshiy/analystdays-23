@@ -11,6 +11,7 @@ import speakerImg from './assets/speaker.png';
 import clientsImg from './assets/clients.svg';
 import spekList from './assets/spek-list.png';
 import spekChange from './assets/spek-change.png';
+import qrTelegram from './assets/qr-telegram.svg';
 
 // ─────────────────────────────────────────────────────────────
 // Analyst Days / 23 — тема снята с analystdays23_speaker_template_ru.pptx
@@ -1135,10 +1136,27 @@ const Takeaways: Page = () => (
   </Slide>
 );
 
+const QrCard = ({ left, title, caption, children }: {
+  left: number; title: string; caption: string; children: React.ReactNode;
+}) => (
+  <div
+    style={{
+      position: 'absolute', left, top: 290, width: 400, boxSizing: 'border-box',
+      background: C.brown, border: `2px solid ${C.accent}`, borderRadius: 24, padding: 30,
+    }}
+  >
+    <div style={{ fontSize: 36, fontWeight: 700, marginBottom: 22 }}>{title}</div>
+    <div style={{ width: 340, height: 340, background: '#fff', borderRadius: 16, padding: 14, boxSizing: 'border-box' }}>
+      {children}
+    </div>
+    <div style={{ fontSize: 32, color: C.onDark, marginTop: 20 }}>{caption}</div>
+  </div>
+);
+
 const Thanks: Page = () => (
   <Stage bg={bgDark} dark>
     <img src={logo} alt="Analyst Days" style={{ position: 'absolute', left: 79, top: 69, height: 72 }} />
-    <h1 style={{ position: 'absolute', left: 79, top: 380, margin: 0, fontSize: 84, fontWeight: 700 }}>
+    <h1 style={{ position: 'absolute', left: 79, top: 380, margin: 0, fontSize: 72, fontWeight: 700 }}>
       Спасибо за внимание!
     </h1>
     <p style={{ position: 'absolute', left: 84, top: 520, margin: 0, fontSize: 44, color: C.onDark }}>
@@ -1147,17 +1165,20 @@ const Thanks: Page = () => (
     <p style={{ position: 'absolute', left: 84, top: 880, margin: 0, fontSize: 38, color: C.onDark }}>
       Иван Поддубный · Telegram <b style={{ color: '#fff' }}>@northleshiy</b>
     </p>
-    <div
-      style={{
-        position: 'absolute', left: 1102, top: 338, width: 490, height: 400, boxSizing: 'border-box',
-        background: C.brown, border: `2px solid ${C.accent}`, borderRadius: 24, padding: 40,
-      }}
-    >
-      <div style={{ fontSize: 38, fontWeight: 700 }}>Место для QR-кода</div>
-      <div style={{ fontSize: 30, color: C.onDark, marginTop: 24, lineHeight: 1.35 }}>
-        Организаторы пришлют QR-код для вопросов и обсуждения доклада
+    <QrCard left={1000} title="Мой Telegram" caption="@northleshiy">
+      <img src={qrTelegram} alt="QR: t.me/northleshiy" style={{ width: '100%', height: '100%', display: 'block' }} />
+    </QrCard>
+    <QrCard left={1440} title="Вопросы" caption="QR организаторов">
+      <div
+        style={{
+          width: '100%', height: '100%', boxSizing: 'border-box', border: '3px dashed #B8C0CC', borderRadius: 12,
+          display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center',
+          color: C.muted, fontSize: 30, lineHeight: 1.3, padding: 20,
+        }}
+      >
+        Сюда — QR от организаторов
       </div>
-    </div>
+    </QrCard>
   </Stage>
 );
 
