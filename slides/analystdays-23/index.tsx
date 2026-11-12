@@ -11,7 +11,7 @@ import speakerImg from './assets/speaker.png';
 import clientsImg from './assets/clients.svg';
 import spekList from './assets/spek-list.png';
 import spekChange from './assets/spek-change.png';
-import qrTelegram from './assets/qr-telegram.svg';
+import qrTelegram from './assets/qr-techlead-stream.png';
 
 // ─────────────────────────────────────────────────────────────
 // Analyst Days / 23 — тема снята с analystdays23_speaker_template_ru.pptx
@@ -1156,18 +1156,25 @@ const QrCard = ({ left, title, caption, children }: {
 const Thanks: Page = () => (
   <Stage bg={bgDark} dark>
     <img src={logo} alt="Analyst Days" style={{ position: 'absolute', left: 79, top: 69, height: 72 }} />
-    <h1 style={{ position: 'absolute', left: 79, top: 380, margin: 0, fontSize: 72, fontWeight: 700 }}>
+    <h1 style={{ position: 'absolute', left: 79, top: 190, margin: 0, fontSize: 72, fontWeight: 700 }}>
       Спасибо за внимание!
     </h1>
-    <p style={{ position: 'absolute', left: 84, top: 520, margin: 0, fontSize: 44, color: C.onDark }}>
+    <p style={{ position: 'absolute', left: 84, top: 295, margin: 0, fontSize: 40, color: C.onDark }}>
       Вопросы и обратная связь
     </p>
-    <p style={{ position: 'absolute', left: 84, top: 880, margin: 0, fontSize: 38, color: C.onDark }}>
-      Иван Поддубный · Telegram <b style={{ color: '#fff' }}>@northleshiy</b>
-    </p>
-    <QrCard left={1000} title="Мой Telegram" caption="@northleshiy">
-      <img src={qrTelegram} alt="QR: t.me/northleshiy" style={{ width: '100%', height: '100%', display: 'block' }} />
-    </QrCard>
+    <img
+      src={qrTelegram}
+      alt="QR: Telegram-канал @techlead_stream"
+      style={{ position: 'absolute', left: 79, top: 390, height: 600, display: 'block' }}
+    />
+    <div style={{ position: 'absolute', left: 640, top: 770, width: 380 }}>
+      <div style={{ fontSize: 38, fontWeight: 700 }}>Мой Telegram-канал</div>
+      <div style={{ fontSize: 36, color: C.onDark, marginTop: 16, lineHeight: 1.35 }}>
+        Иван Поддубный
+        <br />
+        <b style={{ color: '#fff' }}>@northleshiy</b>
+      </div>
+    </div>
     <QrCard left={1440} title="Вопросы" caption="QR организаторов">
       <div
         style={{
